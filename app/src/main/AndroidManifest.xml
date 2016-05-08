@@ -15,9 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.FormReclamoActivity"
-            android:label="Formulario Reclamo">
-        </activity>
+        <activity
+            android:name=".Activities.FormReclamoActivity"
+            android:label="Formulario de Reclamo"></activity>
+        <activity android:name=".Activities.FormUserActivity"
+            android:label="Datos de Usuario"></activity>
     </application>
 
 </manifest>
