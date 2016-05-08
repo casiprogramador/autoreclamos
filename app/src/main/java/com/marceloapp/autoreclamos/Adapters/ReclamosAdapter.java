@@ -1,5 +1,6 @@
 package com.marceloapp.autoreclamos.Adapters;
 
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.marceloapp.autoreclamos.Activities.FormReclamoActivity;
 import com.marceloapp.autoreclamos.Models.Reclamo;
 import com.marceloapp.autoreclamos.R;
 
@@ -54,6 +56,13 @@ public class ReclamosAdapter extends RecyclerView.Adapter <ReclamosAdapter.Recla
             reclamoTitle = (TextView)itemView.findViewById(R.id.reclamo_title);
             reclamoDescription = (TextView)itemView.findViewById(R.id.reclamo_description);
             reclamoIcon = (ImageView)itemView.findViewById(R.id.reclamo_icon);
+            cv.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View v) {
+                    cv.getContext().startActivity(new Intent(v.getContext(),FormReclamoActivity.class));
+                }
+            });
         }
     }
 }
