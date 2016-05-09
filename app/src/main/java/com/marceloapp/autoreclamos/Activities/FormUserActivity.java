@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +27,10 @@ public class FormUserActivity extends AppCompatActivity {
         nameUser = (EditText)findViewById(R.id.input_name_user);
         ciUser = (EditText)findViewById(R.id.input_ci_user);
         btnSaveUser = (Button)findViewById(R.id.btn_save_user);
+
+        SharedPreferences preferences = getSharedPreferences("user_date", Context.MODE_PRIVATE);
+        nameUser.setText(preferences.getString("name_user","nada"));
+        ciUser.setText(preferences.getString("ci_user","nada"));
 
         btnSaveUser.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -68,7 +68,7 @@
                 android:singleLine="true"
                 android:hint="Placa" />
         </android.support.design.widget.TextInputLayout>
-        <Button android:id="@+id/btn_signup"
+        <Button android:id="@+id/btn_save_reclamo"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:text="Enviar Reclamo"

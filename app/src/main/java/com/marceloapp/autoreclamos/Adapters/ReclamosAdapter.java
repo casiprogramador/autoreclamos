@@ -3,6 +3,7 @@ package com.marceloapp.autoreclamos.Adapters;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,10 +58,27 @@ public class ReclamosAdapter extends RecyclerView.Adapter <ReclamosAdapter.Recla
             reclamoDescription = (TextView)itemView.findViewById(R.id.reclamo_description);
             reclamoIcon = (ImageView)itemView.findViewById(R.id.reclamo_icon);
             cv.setOnClickListener(new View.OnClickListener(){
-
                 @Override
                 public void onClick(View v) {
-                    cv.getContext().startActivity(new Intent(v.getContext(),FormReclamoActivity.class));
+
+                    String tipoReclamo = "";
+                    int position = getAdapterPosition();
+                    switch (position){
+                        case 0:
+                            tipoReclamo="Falla Mecanica";
+                            break;
+                        case 1:
+                            tipoReclamo="Accidente";
+                            break;
+                        case 2:
+                            tipoReclamo="Robo";
+                            break;
+                        default:
+                            tipoReclamo="error";
+                    }
+                    Intent reclamoFormulario = new Intent(v.getContext(),FormReclamoActivity.class);
+                    reclamoFormulario.putExtra("tipo_reclamo",tipoReclamo);
+                    cv.getContext().startActivity(reclamoFormulario);
                 }
             });
         }
