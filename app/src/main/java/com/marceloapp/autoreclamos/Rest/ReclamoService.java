@@ -20,5 +20,6 @@ public interface ReclamoService {
                                 @Field("marca")String marca,
                                 @Field("modelo")String modelo,
                                 @Field("anio")String anio,
-                                @Field("placa")String placa);
+                                @Field("placa")String placa,
+                                     @Field("grua")String grua);
 }

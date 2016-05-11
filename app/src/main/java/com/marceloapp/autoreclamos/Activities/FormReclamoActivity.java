@@ -1,14 +1,17 @@
 package com.marceloapp.autoreclamos.Activities;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.marceloapp.autoreclamos.R;
@@ -34,7 +37,9 @@ public class FormReclamoActivity extends AppCompatActivity{
     EditText modelo;
     EditText anio;
     EditText placa;
+    CheckBox checkGrua;
     Button btnReclamo;
+    static String grua="NO";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +53,21 @@ public class FormReclamoActivity extends AppCompatActivity{
         modelo = (EditText)findViewById(R.id.input_modelo);
         anio = (EditText)findViewById(R.id.input_anio);
         placa = (EditText)findViewById(R.id.input_placa);
+
+        checkGrua = (CheckBox)findViewById(R.id.check_grua);
+        checkGrua.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(((CheckBox) v).isChecked()){
+                    grua = "SI";
+                }else{
+                    grua = "NO";
+                }
+                Log.i("STADO",grua);
+            }
+        });
+
+
         btnReclamo = (Button)findViewById(R.id.btn_save_reclamo);
         btnReclamo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,11 +92,14 @@ public class FormReclamoActivity extends AppCompatActivity{
                         marca.getText().toString(),
                         modelo.getText().toString(),
                         anio.getText().toString(),
-                        placa.getText().toString());
+                        placa.getText().toString(),
+                        grua);
                 call.enqueue(new Callback<ResponseHttp>() {
                     @Override
                     public void onResponse(Call<ResponseHttp> call, Response<ResponseHttp> response) {
                         Log.i("respuesta", String.valueOf(response));
+                        Intent returnIntent  = new Intent();
+                        setResult(Activity.RESULT_OK, returnIntent );
                         finish();
                     }
 

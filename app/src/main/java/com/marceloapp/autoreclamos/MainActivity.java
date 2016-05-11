@@ -1,13 +1,16 @@
 package com.marceloapp.autoreclamos;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.marceloapp.autoreclamos.Activities.FormUserActivity;
 import com.marceloapp.autoreclamos.Adapters.ViewPagerAdapter;
@@ -22,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
+    private final static int RESPUESTA = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         viewPagerAdapter.addFragments(new ContactosFragment(),"Contactos");
         viewPager.setAdapter(viewPagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
-
     }
 
     @Override
@@ -54,9 +57,18 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_user) {
             Intent activity = new Intent(this, FormUserActivity.class);
-            startActivity(activity);
+            startActivityForResult(activity,RESPUESTA);
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+            // Verificamos que la respuesta sea correcta
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(this, "Datos guardados correctamente", Toast.LENGTH_SHORT)
+                        .show();
+            }
     }
 }

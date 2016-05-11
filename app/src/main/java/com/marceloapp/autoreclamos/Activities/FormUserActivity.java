@@ -1,6 +1,8 @@
 package com.marceloapp.autoreclamos.Activities;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.marceloapp.autoreclamos.MainActivity;
 import com.marceloapp.autoreclamos.R;
 
 public class FormUserActivity extends AppCompatActivity {
@@ -35,6 +38,8 @@ public class FormUserActivity extends AppCompatActivity {
         btnSaveUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+
                 String name = nameUser.getText().toString();
                 String ci = ciUser.getText().toString();
                 SharedPreferences preferences = getSharedPreferences("user_date", Context.MODE_PRIVATE);
@@ -42,6 +47,8 @@ public class FormUserActivity extends AppCompatActivity {
                 editor.putString("name_user",name);
                 editor.putString("ci_user",ci);
                 editor.commit();
+                Intent returnIntent  = new Intent();
+                setResult(Activity.RESULT_OK, returnIntent );
                 finish();
             }
         });

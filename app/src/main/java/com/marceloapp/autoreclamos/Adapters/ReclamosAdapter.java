@@ -1,5 +1,6 @@
 package com.marceloapp.autoreclamos.Adapters;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -78,7 +79,8 @@ public class ReclamosAdapter extends RecyclerView.Adapter <ReclamosAdapter.Recla
                     }
                     Intent reclamoFormulario = new Intent(v.getContext(),FormReclamoActivity.class);
                     reclamoFormulario.putExtra("tipo_reclamo",tipoReclamo);
-                    cv.getContext().startActivity(reclamoFormulario);
+                    //cv.getContext().startActivity(reclamoFormulario);
+                    ((Activity)cv.getContext()).startActivityForResult(reclamoFormulario,0);
                 }
             });
         }
