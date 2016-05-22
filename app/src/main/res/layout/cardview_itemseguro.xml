@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cvseguro">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+        <ImageView
+            android:layout_width="45sp"
+            android:layout_height="45sp"
+            android:id="@+id/seguro_icon"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/icon_car"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="16dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/seguro_title"
+            android:text="title_seguro"
+            android:layout_toRightOf="@+id/seguro_icon"
+            android:layout_alignParentTop="true"
+            android:textSize="20sp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/seguro_description"
+            android:text="description seguro"
+            android:layout_toRightOf="@+id/seguro_icon"
+            android:layout_below="@+id/seguro_title"
+            android:textSize="12sp"
+            />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

@@ -19,6 +19,7 @@ public class FormUserActivity extends AppCompatActivity {
     Toolbar toolbar;
     EditText nameUser;
     EditText ciUser;
+    EditText phoneUser;
     Button btnSaveUser;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +30,13 @@ public class FormUserActivity extends AppCompatActivity {
 
         nameUser = (EditText)findViewById(R.id.input_name_user);
         ciUser = (EditText)findViewById(R.id.input_ci_user);
+        phoneUser = (EditText)findViewById(R.id.input_phone_user);
         btnSaveUser = (Button)findViewById(R.id.btn_save_user);
 
         SharedPreferences preferences = getSharedPreferences("user_date", Context.MODE_PRIVATE);
         nameUser.setText(preferences.getString("name_user","nada"));
         ciUser.setText(preferences.getString("ci_user","nada"));
+        phoneUser.setText(preferences.getString("phone_user","nada"));
 
         btnSaveUser.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,10 +45,13 @@ public class FormUserActivity extends AppCompatActivity {
 
                 String name = nameUser.getText().toString();
                 String ci = ciUser.getText().toString();
+                String phone = phoneUser.getText().toString();
                 SharedPreferences preferences = getSharedPreferences("user_date", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = preferences.edit();
                 editor.putString("name_user",name);
                 editor.putString("ci_user",ci);
+                editor.putString("phone_user",phone);
+
                 editor.commit();
                 Intent returnIntent  = new Intent();
                 setResult(Activity.RESULT_OK, returnIntent );

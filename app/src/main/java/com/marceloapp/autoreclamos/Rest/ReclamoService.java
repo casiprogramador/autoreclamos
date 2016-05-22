@@ -17,6 +17,7 @@ public interface ReclamoService {
     Call<ResponseHttp> createReclamo(@Field("tipo")String tipo,
                                      @Field("nombre")String nombre,
                                 @Field("ci")String ci,
+                                     @Field("phone")String phone,
                                 @Field("marca")String marca,
                                 @Field("modelo")String modelo,
                                 @Field("anio")String anio,

@@ -45,21 +45,7 @@ public class ReclamosFragment extends Fragment {
         ReclamosAdapter adapter = new ReclamosAdapter(reclamos);
         recyclerView.setAdapter(adapter);
 
-        //initializeData();
-        //initializeAdapter();
-
         return view;
     }
 
-    private void initializeData(){
-        reclamos = new ArrayList<>();
-        reclamos.add(new Reclamo("Titulo Reclamo 1","Descripcion Reclamo 1",R.mipmap.ic_launcher));
-        reclamos.add(new Reclamo("Titulo Reclamo 2","Descripcion Reclamo 2",R.mipmap.ic_launcher));
-        reclamos.add(new Reclamo("Titulo Reclamo 3","Descripcion Reclamo 3",R.mipmap.ic_launcher));
-    }
-
-    private void initializeAdapter(){
-        ReclamosAdapter adapter = new ReclamosAdapter(reclamos);
-        recyclerView.setAdapter(adapter);
-    }
 }

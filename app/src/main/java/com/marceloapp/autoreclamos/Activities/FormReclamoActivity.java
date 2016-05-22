@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -67,7 +68,6 @@ public class FormReclamoActivity extends AppCompatActivity{
             }
         });
 
-
         btnReclamo = (Button)findViewById(R.id.btn_save_reclamo);
         btnReclamo.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +89,7 @@ public class FormReclamoActivity extends AppCompatActivity{
                         getIntent().getStringExtra("tipo_reclamo"),
                         preferences.getString("name_user",""),
                         preferences.getString("ci_user",""),
+                        preferences.getString("phone_user",""),
                         marca.getText().toString(),
                         modelo.getText().toString(),
                         anio.getText().toString(),
