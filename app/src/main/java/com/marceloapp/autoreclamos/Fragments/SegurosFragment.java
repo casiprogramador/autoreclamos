@@ -44,7 +44,7 @@ public class SegurosFragment extends Fragment {
         seguros.add(new Seguro("Seguro Patrimonial","Reparar la pérdida que un asegurado puede sufrir en su patrimonio como consecuencia de un siniestro",R.drawable.icon_patrimonio_seguro));
         seguros.add(new Seguro("Seguro para Viajes","Las personas que vayan a desplazarse por cualquier motivo estar protegidas frente a percances relacionados con su salud, accidentes personales, equipaje, demoras o cancelación, entre otros",R.drawable.icon_viaje_seguro));
         seguros.add(new Seguro("Seguro de Automoviles","Cubre los riesgos creados por la conducción de automóviles en caso de causar un accidente",R.drawable.icon_auto_seguro));
-        SeguroAdapter adapter = new SeguroAdapter(seguros);
+        SeguroAdapter adapter = new SeguroAdapter(seguros,getActivity());
         recyclerView.setAdapter(adapter);
 
         return view;

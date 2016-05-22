@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="10dp"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/text_content_seguro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Si desea este seguro puede contactarse con nosotros para obtener el mejor seguro para usted"
+        android:textSize="20dp" />
+
+    <Button
+        android:id="@+id/btn_seguro_contactarse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contactarse"
+        android:textColor="@color/textIcon"
+        android:background="@color/colorAccent"
+        android:layout_marginTop="15dp"/>
+    <Button
+        android:id="@+id/btn_seguro_cancelar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar"
+        android:textColor="@color/textIcon"
+        android:background="@color/red"
+        android:layout_marginTop="15dp"/>
+</LinearLayout>
