@@ -4,12 +4,131 @@
     android:layout_height="match_parent"
     tools:context="com.marceloapp.autoreclamos.Fragments.ServiciosFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Servicios Fragment"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:textStyle="bold"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_segurovida"
+                android:text="Formulario para solicitar un seguro de vida"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/descarga_segurovida"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/textIcon"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:text="Descargar" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_gastosmedicos"
+                android:text="Formulario para solicitar devolucion de Gastos Medicos"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/descarga_gastosmedicos"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/textIcon"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:text="Descargar" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_arrendamiento"
+                android:text="Formulario para solicitar un seguro de arrendamiento de automovil"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/descarga_arrendamiento"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/textIcon"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:text="Descargar" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:padding="16dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+
+            <TextView
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/text_siniestroauto"
+                android:text="Formulario para denunciar un siniestro de automovil"
+                android:layout_alignParentTop="true"
+                android:layout_marginRight="10dp"
+                android:textSize="16sp"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/descarga_siniestroauto"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorPrimaryDark"
+                android:textColor="@color/textIcon"
+                android:padding="5dp"
+                android:textSize="12sp"
+                android:text="Descargar" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 </FrameLayout>
