@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.marceloapp.autoreclamos.MainActivity"
+    android:background="@color/textIcon"
+    android:orientation="vertical">
+
+<fragment
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    tools:context="com.marceloapp.autoreclamos.Activities.ContactoMapsActivity" />
+    <TextView
+        android:id="@+id/title_oficina"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        android:text="Oficina"/>
+    <TextView
+        android:id="@+id/direccion_contacto"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:text="Direccion: XXX"/>
+    <TextView
+        android:id="@+id/telefono_contacto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:text="Telefono: XXX"/>
+    <Button
+        android:id="@+id/btn_llamada_contacto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Comunicarse"
+        android:textColor="@color/textIcon"
+        android:padding="10dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

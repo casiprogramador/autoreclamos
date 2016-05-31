@@ -4,12 +4,32 @@
     android:layout_height="match_parent"
     tools:context="com.marceloapp.autoreclamos.Fragments.ContactosFragment">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Contactos Fragment"
-        android:gravity="center"
-        android:textSize="30dp"
-        android:textStyle="bold"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/lapaz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/textIcon"
+            android:textColor="@color/primaryText"
+            android:text="La Paz"/>
+        <Button
+            android:id="@+id/cochabamba"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/textIcon"
+            android:textColor="@color/primaryText"
+            android:text="Cochabamba"/>
+        <Button
+            android:id="@+id/santacruz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/textIcon"
+            android:textColor="@color/primaryText"
+            android:text="Santa Cruz"/>
+    </LinearLayout>
 
 </FrameLayout>
