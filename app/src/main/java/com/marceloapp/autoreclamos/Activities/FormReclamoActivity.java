@@ -6,9 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.SwitchCompat;
 import android.support.v7.widget.Toolbar;
-import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -16,7 +14,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.marceloapp.autoreclamos.R;
-import com.marceloapp.autoreclamos.Rest.Reclamo;
 import com.marceloapp.autoreclamos.Rest.ReclamoService;
 import com.marceloapp.autoreclamos.Rest.ResponseHttp;
 
@@ -27,7 +24,6 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
-import retrofit2.http.Field;
 
 /**
  * Created by Marcelo on 7/5/2016.
@@ -38,6 +34,7 @@ public class FormReclamoActivity extends AppCompatActivity{
     EditText modelo;
     EditText anio;
     EditText placa;
+    EditText detalle;
     CheckBox checkGrua;
     Button btnReclamo;
     static String grua="NO";
@@ -54,6 +51,7 @@ public class FormReclamoActivity extends AppCompatActivity{
         modelo = (EditText)findViewById(R.id.input_modelo);
         anio = (EditText)findViewById(R.id.input_anio);
         placa = (EditText)findViewById(R.id.input_placa);
+        detalle = (EditText)findViewById(R.id.input_detalle);
 
         checkGrua = (CheckBox)findViewById(R.id.check_grua);
         checkGrua.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +92,8 @@ public class FormReclamoActivity extends AppCompatActivity{
                         modelo.getText().toString(),
                         anio.getText().toString(),
                         placa.getText().toString(),
-                        grua);
+                        grua,
+                        detalle.getText().toString());
                 call.enqueue(new Callback<ResponseHttp>() {
                     @Override
                     public void onResponse(Call<ResponseHttp> call, Response<ResponseHttp> response) {

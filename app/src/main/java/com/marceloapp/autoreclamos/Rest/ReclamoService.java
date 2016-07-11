@@ -13,11 +13,12 @@ public interface ReclamoService {
     @POST("/api/v1/reclamo")
     Call<ResponseHttp> createReclamo(@Field("tipo")String tipo,
                                      @Field("nombre")String nombre,
-                                @Field("ci")String ci,
+                                     @Field("ci")String ci,
                                      @Field("phone")String phone,
-                                @Field("marca")String marca,
-                                @Field("modelo")String modelo,
-                                @Field("anio")String anio,
-                                @Field("placa")String placa,
-                                     @Field("grua")String grua);
+                                     @Field("marca")String marca,
+                                     @Field("modelo")String modelo,
+                                     @Field("anio")String anio,
+                                     @Field("placa")String placa,
+                                     @Field("grua")String grua,
+                                     @Field("detalle")String detalle);
 }
